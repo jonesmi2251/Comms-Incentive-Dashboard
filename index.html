@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subway® Comms Metrics Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="subway-logo">
+                        <span class="arrow-left">→</span>
+                    <span class="subway-text">SUBWAY<sup>®</sup></span>
+                    <span class="arrow-right">→</span>
+                    </div>
+                    <h1>Communications Metrics Dashboard</h1>
+                </div>
+                <div class="header-meta">
+                    <p class="last-updated">Last Updated: <span id="lastUpdated"></span></p>
+                    <a href="data-manager.html" class="data-manager-link" title="Upload and manage CSV data">
+                        <i class="fas fa-database"></i> Data Manager
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="dashboard-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#training" class="nav-link active"><i class="fas fa-graduation-cap"></i> Training</a></li>
+                <li><a href="#restaurant" class="nav-link"><i class="fas fa-utensils"></i> Restaurant Visits</a></li>
+                <li><a href="#weekly-wrap" class="nav-link"><i class="fas fa-envelope-open-text"></i> Weekly Wrap</a></li>
+                <li><a href="#smo-connect" class="nav-link"><i class="fas fa-paper-plane"></i> SMO Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            
+            <!-- Section 1: Training Completion Initiative -->
+            <section id="training" class="dashboard-section active">
+                <div class="section-header training-header">
+                    <div class="section-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h2>Training Completion Initiative</h2>
+                    </div>
+                    <p class="section-subtitle">Comprehensive Completion Metrics Tracking</p>
+                </div>
+
+                <!-- Training KPI Cards -->
+<div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-subtitle" id="trainingLatestCampaign">Latest campaign</p>
+                            <p class="kpi-label">UKI Completion</p>
+                            <p class="kpi-value" id="trainingLatestRegion">-</p>
+                            <p class="kpi-change" id="trainingLatestChange">vs previous campaign</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-subtitle">Latest campaign</p>
+                            <p class="kpi-label">100% First 7 Days</p>
+                            <p class="kpi-value" id="trainingLatest100First7">-</p>
+                            <p class="kpi-change" id="training100First7Change">vs previous campaign</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-users"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-subtitle">Latest campaign</p>
+                            <p class="kpi-label">80%+ By Launch</p>
+                            <p class="kpi-value" id="trainingLatest80Launch">-</p>
+                            <p class="kpi-change" id="training80LaunchChange">vs previous campaign</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">Total Improvement</p>
+                            <p class="kpi-value" id="trainingTotalImprovement">-</p>
+                            <p class="kpi-change" id="trainingImprovementDetail">Since initiative launch</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training Charts -->
+                <div class="chart-grid">
+                    <div class="chart-card chart-card-full">
+                        <h3>Full Region Completion % by Campaign (Target: 80%)</h3>
+                        <div class="chart-container">
+                            <canvas id="trainingRegionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>100% First 7 Days</h3>
+                        <div class="chart-container">
+                            <canvas id="training100Chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>100% By Launch - Year-over-Year Comparison</h3>
+                        <div class="chart-container">
+                            <canvas id="training80Chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training Data Table -->
+                <div class="data-table-card">
+                    <h3>Comprehensive Campaign Metrics</h3>
+                    <div class="table-responsive">
+                        <table id="trainingTable" class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Campaign</th>
+                                    <th>100% First 7 Days</th>
+                                    <th>100% By Launch</th>
+                                    <th>Full Region %</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="trainingTableBody">
+                                <!-- Data populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Restaurant Visits Initiative -->
+            <section id="restaurant" class="dashboard-section">
+                <div class="section-header restaurant-header">
+                    <div class="section-title">
+                        <i class="fas fa-utensils"></i>
+                        <h2>Restaurant Visits Initiative</h2>
+                    </div>
+                    <p class="section-subtitle">Monthly Evaluation Score Tracking</p>
+                </div>
+
+                <!-- Restaurant KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-star"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">Current Average Score</p>
+                            <p class="kpi-value" id="restaurantCurrentScore">-</p>
+                            <p class="kpi-change" id="restaurantCurrentChange">-</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">Total Improvement</p>
+                            <p class="kpi-value" id="restaurantTotalImprovement">-</p>
+                            <p class="kpi-change">Since initiative launch</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-chart-bar"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">Overall Average</p>
+                            <p class="kpi-value" id="restaurantOverallAverage">-</p>
+                            <p class="kpi-change">All months</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">Months Tracked</p>
+                            <p class="kpi-value" id="restaurantMonthsTracked">-</p>
+                            <p class="kpi-change">Monthly evaluations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Charts -->
+                <div class="chart-grid">
+                    <div class="chart-card chart-card-full">
+                        <h3>Evaluation Score Trend</h3>
+                        <div class="chart-container">
+                            <canvas id="restaurantTrendChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Data Table -->
+                <div class="data-table-card">
+                    <h3>Monthly Performance</h3>
+                    <div class="table-responsive">
+                        <table id="restaurantTable" class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Visits</th>
+                                    <th>Avg Score</th>
+                                    <th>Highest</th>
+                                    <th>Lowest</th>
+                                    <th>Change</th>
+                                    <th>Trend</th>
+                                </tr>
+                            </thead>
+                            <tbody id="restaurantTableBody">
+                                <!-- Data populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Weekly Wrap Newsletter -->
+            <section id="weekly-wrap" class="dashboard-section">
+                <div class="section-header email-header">
+                    <div class="section-title">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <h2>Weekly Wrap Newsletter</h2>
+                    </div>
+                    <p class="section-subtitle">Franchisee Email Open Rate & CTR Tracking</p>
+                </div>
+
+                <!-- Weekly Wrap KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-envelope-open"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">2026 Average Open Rate</p>
+                            <p class="kpi-value" id="weeklyWrapLatestRate">-</p>
+                            <p class="kpi-change" id="weeklyWrapLatestChange">vs 2025</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-calendar-year"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">vs Last Year</p>
+                            <p class="kpi-value" id="weeklyWrapYoYChange">-</p>
+                            <p class="kpi-change">Same week last year</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">vs Last Quarter</p>
+                            <p class="kpi-value" id="weeklyWrapQoQChange">-</p>
+                            <p class="kpi-change">Previous quarter avg</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-calendar-day"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">vs Last Month</p>
+                            <p class="kpi-value" id="weeklyWrapMoMChange">-</p>
+                            <p class="kpi-change">Previous month avg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Wrap Charts -->
+                <div class="chart-grid">
+                    <div class="chart-card chart-card-full">
+                        <h3>Monthly Open Rate Trend</h3>
+                        <div class="chart-container">
+                            <canvas id="weeklyWrapTrendChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Year-over-Year Comparison</h3>
+                        <div class="chart-container">
+                            <canvas id="weeklyWrapYoYChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Quarterly Averages</h3>
+                        <div class="chart-container">
+                            <canvas id="weeklyWrapQuarterChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Wrap Summary Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="stat-label">Avg Open Rate</p>
+                        <p class="stat-value" id="weeklyWrapAvgOpenRate">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Avg CTR</p>
+                        <p class="stat-value" id="weeklyWrapAvgCTR">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Best Open Rate</p>
+                        <p class="stat-value" id="weeklyWrapBest">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Best CTR</p>
+                        <p class="stat-value" id="weeklyWrapBestCTR">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Latest CTR</p>
+                        <p class="stat-value" id="weeklyWrapLatestCTR">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Total Weeks Tracked</p>
+                        <p class="stat-value" id="weeklyWrapTotalWeeks">-</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: SMO Connect Newsletter -->
+            <section id="smo-connect" class="dashboard-section">
+                <div class="section-header email-header-alt">
+                    <div class="section-title">
+                        <i class="fas fa-paper-plane"></i>
+                        <h2>SMO Connect Newsletter</h2>
+                    </div>
+                    <p class="section-subtitle">Monthly Email Open Rate Tracking</p>
+                </div>
+
+                <!-- SMO Connect KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-envelope-open"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">Latest Open Rate</p>
+                            <p class="kpi-value" id="smoConnectLatestRate">-</p>
+                            <p class="kpi-change" id="smoConnectLatestChange">-</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-calendar-year"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">vs Last Year</p>
+                            <p class="kpi-value" id="smoConnectYoYChange">-</p>
+                            <p class="kpi-change">Same month last year</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">2026 Average Open Rate</p>
+                            <p class="kpi-value" id="smoConnectQoQChange">-</p>
+                            <p class="kpi-change" id="smoConnect2026Change">vs 2025</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-calendar-day"></i></div>
+                        <div class="kpi-content">
+                            <p class="kpi-label">2025 Average Open Rate</p>
+                            <p class="kpi-value" id="smoConnectMoMChange">-</p>
+                            <p class="kpi-change" id="smoConnect2025Label">Last year</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SMO Connect Charts -->
+                <div class="chart-grid">
+                    <div class="chart-card chart-card-full">
+                        <h3>Monthly Open Rate Trend</h3>
+                        <div class="chart-container">
+                            <canvas id="smoConnectTrendChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Year-over-Year Comparison</h3>
+                        <div class="chart-container">
+                            <canvas id="smoConnectYoYChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Quarterly Averages</h3>
+                        <div class="chart-container">
+                            <canvas id="smoConnectQuarterChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SMO Connect Summary Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="stat-label">This Year Average</p>
+                        <p class="stat-value" id="smoConnectThisYearAvg">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Last Year Average</p>
+                        <p class="stat-value" id="smoConnectLastYearAvg">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Best Open Rate</p>
+                        <p class="stat-value" id="smoConnectBest">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Total Months Tracked</p>
+                        <p class="stat-value" id="smoConnectTotalMonths">-</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="container">
+            <p>🥖 Fresh Data. Fresh Results.</p>
+            <p class="footer-note">Subway® Communications Metrics Dashboard | Data updates automatically</p>
+        </div>
+    </footer>
+
+    <!-- Load Data and Initialize -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

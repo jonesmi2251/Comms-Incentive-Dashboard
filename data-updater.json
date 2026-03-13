@@ -1,0 +1,333 @@
+{
+  "_instructions": {
+    "how_to_use": "Fill in your data below, then copy EVERYTHING and paste it into js/data.js (replacing all existing content)",
+    "important_notes": [
+      "Remove this _instructions section before pasting into data.js",
+      "Keep all commas and brackets exactly as shown",
+      "Numbers should NOT have quotes around them",
+      "Text should ALWAYS have quotes around them",
+      "Dates should follow the format shown in examples",
+      "After pasting, save data.js and refresh your browser"
+    ],
+    "need_help": "See data-template.js for more examples"
+  },
+
+  "trainingCampaigns": [
+    {
+      "campaign": "Campaign 1",
+      "year": 2024,
+      "period": "Jan 2024",
+      "participants": 245,
+      "completionRate": 62,
+      "status": "completed"
+    },
+    {
+      "campaign": "Campaign 2",
+      "year": 2024,
+      "period": "Mar 2024",
+      "participants": 268,
+      "completionRate": 68,
+      "status": "completed"
+    },
+    {
+      "campaign": "Campaign 3",
+      "year": 2024,
+      "period": "May 2024",
+      "participants": 289,
+      "completionRate": 73,
+      "status": "completed"
+    },
+    {
+      "campaign": "Campaign 4",
+      "year": 2024,
+      "period": "Aug 2024",
+      "participants": 312,
+      "completionRate": 78,
+      "status": "completed"
+    },
+    {
+      "campaign": "Campaign 5",
+      "year": 2024,
+      "period": "Oct 2024",
+      "participants": 325,
+      "completionRate": 82,
+      "status": "completed"
+    },
+    {
+      "campaign": "Campaign 1",
+      "year": 2025,
+      "period": "Jan 2025",
+      "participants": 340,
+      "completionRate": 85,
+      "status": "completed"
+    },
+    {
+      "campaign": "Campaign 2",
+      "year": 2025,
+      "period": "Mar 2025",
+      "participants": 358,
+      "completionRate": 88,
+      "status": "completed"
+    },
+    {
+      "campaign": "Campaign 3",
+      "year": 2025,
+      "period": "May 2025",
+      "participants": 375,
+      "completionRate": 91,
+      "status": "completed"
+    },
+    {
+      "campaign": "Campaign 4",
+      "year": 2025,
+      "period": "Aug 2025",
+      "participants": 390,
+      "completionRate": 0,
+      "status": "planned"
+    },
+    {
+      "campaign": "Campaign 5",
+      "year": 2025,
+      "period": "Oct 2025",
+      "participants": 400,
+      "completionRate": 0,
+      "status": "planned"
+    }
+  ],
+
+  "restaurantVisits": [
+    {
+      "month": "Jan 2024",
+      "visits": 45,
+      "avgScore": 72.5,
+      "highest": 88,
+      "lowest": 58
+    },
+    {
+      "month": "Feb 2024",
+      "visits": 42,
+      "avgScore": 73.2,
+      "highest": 89,
+      "lowest": 60
+    },
+    {
+      "month": "Mar 2024",
+      "visits": 48,
+      "avgScore": 74.8,
+      "highest": 90,
+      "lowest": 62
+    },
+    {
+      "month": "Apr 2024",
+      "visits": 50,
+      "avgScore": 75.5,
+      "highest": 91,
+      "lowest": 64
+    },
+    {
+      "month": "May 2024",
+      "visits": 52,
+      "avgScore": 74.2,
+      "highest": 89,
+      "lowest": 61
+    },
+    {
+      "month": "Jun 2024",
+      "visits": 55,
+      "avgScore": 76.5,
+      "highest": 92,
+      "lowest": 65,
+      "initiativeLaunch": true
+    },
+    {
+      "month": "Jul 2024",
+      "visits": 58,
+      "avgScore": 78.2,
+      "highest": 93,
+      "lowest": 68
+    },
+    {
+      "month": "Aug 2024",
+      "visits": 60,
+      "avgScore": 79.8,
+      "highest": 94,
+      "lowest": 70
+    },
+    {
+      "month": "Sep 2024",
+      "visits": 62,
+      "avgScore": 81.5,
+      "highest": 95,
+      "lowest": 72
+    },
+    {
+      "month": "Oct 2024",
+      "visits": 65,
+      "avgScore": 83.2,
+      "highest": 96,
+      "lowest": 74
+    },
+    {
+      "month": "Nov 2024",
+      "visits": 63,
+      "avgScore": 84.5,
+      "highest": 97,
+      "lowest": 76
+    },
+    {
+      "month": "Dec 2024",
+      "visits": 60,
+      "avgScore": 85.8,
+      "highest": 97,
+      "lowest": 78
+    },
+    {
+      "month": "Jan 2025",
+      "visits": 68,
+      "avgScore": 86.5,
+      "highest": 98,
+      "lowest": 79
+    },
+    {
+      "month": "Feb 2025",
+      "visits": 70,
+      "avgScore": 87.2,
+      "highest": 98,
+      "lowest": 80
+    },
+    {
+      "month": "Mar 2025",
+      "visits": 72,
+      "avgScore": 88.5,
+      "highest": 99,
+      "lowest": 82
+    }
+  ],
+
+  "weeklyWrap": [
+    {
+      "week": "Week 1",
+      "date": "Jan 1, 2024",
+      "year": 2024,
+      "quarter": "Q1",
+      "month": "Jan",
+      "openRate": 35.2,
+      "recipients": 850
+    },
+    {
+      "week": "Week 2",
+      "date": "Jan 8, 2024",
+      "year": 2024,
+      "quarter": "Q1",
+      "month": "Jan",
+      "openRate": 36.5,
+      "recipients": 855
+    },
+    {
+      "week": "Week 3",
+      "date": "Jan 15, 2024",
+      "year": 2024,
+      "quarter": "Q1",
+      "month": "Jan",
+      "openRate": 37.8,
+      "recipients": 860
+    },
+    {
+      "week": "Week 4",
+      "date": "Jan 22, 2024",
+      "year": 2024,
+      "quarter": "Q1",
+      "month": "Jan",
+      "openRate": 38.2,
+      "recipients": 865
+    },
+    {
+      "week": "Week 5",
+      "date": "Jan 29, 2024",
+      "year": 2024,
+      "quarter": "Q1",
+      "month": "Jan",
+      "openRate": 39.1,
+      "recipients": 870
+    }
+  ],
+
+  "smoConnect": [
+    {
+      "month": "Jan 2024",
+      "year": 2024,
+      "quarter": "Q1",
+      "openRate": 42.5,
+      "recipients": 920
+    },
+    {
+      "month": "Feb 2024",
+      "year": 2024,
+      "quarter": "Q1",
+      "openRate": 43.8,
+      "recipients": 925
+    },
+    {
+      "month": "Mar 2024",
+      "year": 2024,
+      "quarter": "Q1",
+      "openRate": 45.2,
+      "recipients": 930
+    },
+    {
+      "month": "Apr 2024",
+      "year": 2024,
+      "quarter": "Q2",
+      "openRate": 46.5,
+      "recipients": 935
+    },
+    {
+      "month": "May 2024",
+      "year": 2024,
+      "quarter": "Q2",
+      "openRate": 47.8,
+      "recipients": 940
+    }
+  ],
+
+  "_field_descriptions": {
+    "trainingCampaigns": {
+      "campaign": "Name of the campaign (e.g., 'Campaign 1', 'Campaign 2')",
+      "year": "Year as a number (e.g., 2024, 2025)",
+      "period": "Month and year (e.g., 'Jan 2024', 'Mar 2025')",
+      "participants": "Number of participants (no quotes)",
+      "completionRate": "Percentage as a number 0-100 (no % symbol, no quotes)",
+      "status": "Either 'completed' or 'planned'"
+    },
+    "restaurantVisits": {
+      "month": "Month and year (e.g., 'Jan 2024')",
+      "visits": "Number of restaurant visits (no quotes)",
+      "avgScore": "Average score as a number (can have decimals like 72.5)",
+      "highest": "Highest score (no quotes)",
+      "lowest": "Lowest score (no quotes)",
+      "initiativeLaunch": "Optional - add 'initiativeLaunch': true for the month initiative started"
+    },
+    "weeklyWrap": {
+      "week": "Week label (e.g., 'Week 1', 'Week 2')",
+      "date": "Full date (e.g., 'Jan 1, 2024', 'Mar 17, 2025')",
+      "year": "Year as a number (e.g., 2024, 2025)",
+      "quarter": "Quarter as 'Q1', 'Q2', 'Q3', or 'Q4'",
+      "month": "3-letter month abbreviation (Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec)",
+      "openRate": "Open rate percentage 0-100 (can have decimals like 35.2)",
+      "recipients": "Number of email recipients (no quotes)"
+    },
+    "smoConnect": {
+      "month": "Month and year (e.g., 'Jan 2024')",
+      "year": "Year as a number (e.g., 2024, 2025)",
+      "quarter": "Quarter as 'Q1', 'Q2', 'Q3', or 'Q4'",
+      "openRate": "Open rate percentage 0-100 (can have decimals like 42.5)",
+      "recipients": "Number of email recipients (no quotes)"
+    },
+    "quarter_reference": {
+      "Q1": "January, February, March",
+      "Q2": "April, May, June",
+      "Q3": "July, August, September",
+      "Q4": "October, November, December"
+    }
+  }
+}
